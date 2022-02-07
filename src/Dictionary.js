@@ -5,9 +5,17 @@ import "./Dictionary.css";
 export default function Dictionary() {
     let [keyword, setKeyword] = useState("");
 
+    function handleResponse(response) {
+        console.log(response.data[0]);
+    }
+
     function search(event) {
         event.preventDefault();
+        
         alert(`Searching for definition of ${keyword}`);
+
+        let apiUrl = "https://api.dictionaryapi.dev/api/v2/entries/en_US/word";
+        axios.get(apiUrl).then(handleResponse);
     }
 
     function handleKeywordChange(event) {
