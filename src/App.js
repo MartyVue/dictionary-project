@@ -1,17 +1,23 @@
-import dictionary from './dictionary.png';
-import './App.css';
+import logo from "./logo.png";
+import "./App.css";
+import Dictionary from "./Dictionary";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={dictionary} className="App-logo" alt="dictionary" />
-        <a href="#" className="btn btn-info shadow">
-          Search
-        </a>
-      </header>
+      <div className="container">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+        </header>
+      <main>
+        <Dictionary />
+      </main>
+      <footer className="App-footer">
+        <small>
+          Coded by Martha Vue
+        </small>
+      </footer>
+      </div>
     </div>
   );
 }
-
-export default App;
