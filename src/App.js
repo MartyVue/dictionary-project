@@ -14,7 +14,7 @@ export default function App() {
       </main>
       <footer className="App-footer">
         <small>
-          Coded by Martha Vue
+          <b>Coded by Martha Vue</b>
         </small>
       </footer>
       </div>
