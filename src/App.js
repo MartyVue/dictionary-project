@@ -14,7 +14,11 @@ export default function App() {
       </main>
       <footer className="App-footer">
         <small>
-          <b>Coded by Martha Vue</b>
+           This project was coded by{" "} 
+          <a href="https://martha-vue-final-portfolio.netlify.app/">Martha Vue</a> and is open-sourced on{" "}
+          <a href="https://github.com/MartyVue/ditionary-project"
+          target="_blank" rel="noopener noreferrer">Github</a> and hosted by{" "}
+          <a href="https://www.netlify.com/">Netlify.</a>
         </small>
       </footer>
       </div>
