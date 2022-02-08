@@ -16,7 +16,7 @@ export default function App() {
         <small>
            This project was coded by{" "} 
           <a href="https://martha-vue-final-portfolio.netlify.app/">Martha Vue</a> and is open-sourced on{" "}
-          <a href="https://github.com/MartyVue/ditionary-project"
+          <a href="https://github.com/MartyVue/dictionary-project"
           target="_blank" rel="noopener noreferrer">Github</a> and hosted by{" "}
           <a href="https://www.netlify.com/">Netlify.</a>
         </small>
