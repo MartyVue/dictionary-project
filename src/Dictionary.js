@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import axios from "axios";
 import Results from "./Results";
@@ -11,7 +10,7 @@ export default function Dictionary(props) {
   let [loaded, setLoaded] = useState(false);
   let [photos, setPhotos] = useState(null);
 
-  function handleDictionaryResponse(response) {
+  function handleDictionResponse(response) {
     setResults(response.data[0]);
   }
 
@@ -20,13 +19,14 @@ export default function Dictionary(props) {
   }
 
   function search() {
-     // documentation: https://dictionaryapi.dev/e
+    // documentation: https://dictionaryapi.dev/e
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${keyword}`;
-    axios.get(apiUrl).then(handleDictionaryResponse);
+    axios.get(apiUrl).then(handleDictionResponse);
 
-    let pexelsApiKey = "563492ad6f91700001000001179d0440e7c443b2bad561b307d6484b";
+    let pexelsApiKey =
+      "563492ad6f91700001000001179d0440e7c443b2bad561b307d6484b";
     let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=12`;
-    let headers = { Authorization : `Bearer ${pexelsApiKey}` };
+    let headers = { Authorization: `Bearer ${pexelsApiKey}` };
     axios.get(pexelsApiUrl, { headers: headers }).then(handlePexelsResponse);
   }
 
@@ -49,20 +49,23 @@ export default function Dictionary(props) {
       <div className="Dictionary">
         <section>
           <h1>What word can we search for today?</h1>
-        <form onSubmit={handleSubmit}>
-          <input type="search" onChange={handleKeywordChange} 
-            defaultValue={props.defaultKeyword} />
-        </form>
-        <div className="hint">
-          Suggested Words: hello, colors, name, bright...
-        </div>
-      </section>
-      <Results results={results} />
-      <Photos photos={photos} />
-    </div>
-  );
-} else {
-  load();
-  return "Loading...";
-}
+          <form onSubmit={handleSubmit}>
+            <input
+              type="search"
+              onChange={handleKeywordChange}
+              defaultValue={props.defaultKeyword}
+            />
+          </form>
+          <div className="hint">
+            Suggested Words: morning, walk, ocean, planet...
+          </div>
+        </section>
+        <Results results={results} />
+        <Photos photos={photos} />
+      </div>
+    );
+  } else {
+    load();
+    return "Loading";
+  }
 }
